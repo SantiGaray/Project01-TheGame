@@ -10,11 +10,14 @@ const background = new Background(ctx)
 //------Obstacles--------
 const obstacles = new Obstacles(ctx)
 
-const game = new Game(ctx, player, background, obstacles)
+const bullets = new Bullets(ctx)
+
+const game = new Game(ctx, player, background, obstacles, bullets)
 
 const startButton =  document.getElementById("start-btn")
   startButton.onclick = ()=> {
-    startButton.textContent = "Play Again"
+    //startButton.textContent = "Play Again"
     startButton.blur();
     game.start();
+    startButton.style.display="none"
   };

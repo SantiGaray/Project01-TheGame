@@ -1,2 +1,13 @@
 
+canvas{
+        background: black;
+        
+
+}
+
+button {
+    position: absolute;
+    top: 45%;
+    left: calc(35%)
+}
 

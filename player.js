@@ -3,11 +3,11 @@ console.log("js player loaded")
 class Player{
     constructor(ctx){
         this.ctx = ctx;
-        this.width = 170;
-        this.height = 50;
+        this.width = 100;
+        this.height = 100;
 
         this.x = 0;
-        this.y = 0;
+        this.y = 0 ;
         
         this.vy = 0;
         this.accy = 1;
@@ -31,7 +31,7 @@ class Player{
     }
 
     jump(){
-        this.vy = -15
+        this.vy = -20
     }
 
     draw(){
@@ -43,4 +43,30 @@ class Player{
             this.height
         )
     }
+
+    left() {
+        return this.x;
+    }
+
+    right() {
+        return this.x + this.width;
+    }
+
+    top() {
+        return this.y;
+    }
+
+    bottom() {
+        return this.y + this.height;
+    }
+
+    collidesWith(scrap) {
+        
+        return (this.x < scrap.x + scrap.width &&
+            this.x + this.width >= scrap.x &&
+            this.y < scrap.y + scrap.height &&
+            this.y + this.height > scrap.y)
+    }
+
+
 }
