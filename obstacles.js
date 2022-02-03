@@ -1,3 +1,4 @@
+//------Load Check------
 console.log("js obs loaded")
 
 class Obstacles{
@@ -12,7 +13,7 @@ class Obstacles{
 
     move(frameNumber) {
         if(frameNumber < 20 ) return 
-        if(frameNumber % 50 === 0){
+        if(frameNumber % 120 === 0){
             const scrapPos = Math.floor((Math.random() * (this.ctx.canvas.height - 100)) +100)
 
             this.scrapObstacles.push(this.getScrap(scrapPos))
@@ -39,6 +40,15 @@ class Obstacles{
     return newScrap
     }
 
+
+    checkPlatform(){
+    if(this.player.y + this.player.height <= this.y && this.player.y + this.player.height + this.player.y >= this.y && this.player.x + this.player.width >= this.x && this.player.x <= this.x + this.width){ 
+        this.player.vy = 0
+        this.player.accy = 0
+        console.log('a')
+    }
+    }
+
     draw(frameNumber) {
         this.scrapObstacles.forEach((scrap) => {
             
@@ -55,7 +65,7 @@ class Obstacles{
     
         }
 
-
+      
 
 }
 

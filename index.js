@@ -1,25 +1,33 @@
+//------Load Check------
 console.log("js loaded")
 
+//------Get Canvas------
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
-//------Main Character--------
+//------Audio------
+let gameSoundIntro = new Audio('/music/startlevel.mp3');
+let gameSoundGameOver = new Audio('/music/gameover.wav')
+
+//------Classes------
 const player = new Player(ctx)
-//------Background--------
 const background = new Background(ctx)
-//------Obstacles--------
 const obstacles = new Obstacles(ctx)
+const foes = new Foes(ctx)
+const projectiles = new Projectiles(ctx)
+const game = new Game(ctx, player, background, foes, obstacles, projectiles)
 
-const bullets = new Bullets(ctx)
 
-const game = new Game(ctx, player, background, obstacles, bullets)
-
+//------Get Buttons------
 const startButton =  document.getElementById("start-btn")
 const optionsButton = document.getElementById("menu")
+
+//------Listeners------
   startButton.onclick = ()=> {
-    //startButton.textContent = "Play Again"
+    startButton.textContent = "PLAY AGAIN"
     startButton.blur();
     game.start();
+    gameSoundIntro.play();
     startButton.style.display="none"
     optionsButton.style.display="none"
   };
