@@ -34,7 +34,7 @@ start(){
 }
 
 init(){
-
+   
     if (this.frameNumber) this.stop();
     this.frameNumber = 0;
     this.player.init();
@@ -50,6 +50,7 @@ play(){
     this.draw();
     this.eraseFoes();
     this.obstacles.check
+
     
 
     if (this.checkForCollisions()) this.gameOver();
@@ -67,12 +68,13 @@ stop() {
 }
 
 move(){
-    
     this.background.move(this.frameNumber)
     this.obstacles.move(this.frameNumber)
     this.player.move(this.frameNumber)
     this.foes.move(this.frameNumber)
     this.projectiles.move(this.frameNumber) 
+    this.obstacles.scrapObstacles.forEach(obstacle=> this.checkPlatform(obstacle));
+
 }
 
 // checkPlatform(){
@@ -83,14 +85,16 @@ move(){
 //     }
 // }
 
+    
 checkForCollisions(){
 
     let collision =  false;
 
-    if (this.obstacles.scrapObstacles.some((scrap) => this.player.collidesWith(scrap)))  
-        {
-        collision = true;
-        }
+    // if (this.obstacles.scrapObstacles.some((scrap) => this.player.collidesWith(scrap)))  
+    //     {
+    //     collision = true;
+    //     }
+   
     if (this.foes.wheels.some((wheel) => this.player.collidesWith(wheel)))
         {
         collision = true;
@@ -98,11 +102,29 @@ checkForCollisions(){
         
         return collision
  }
+ checkPlatform(obstacle){
+     console.log("obstacleX",obstacle.x+ obstacle.width)
+     console.log("playerX",this.player.vy + this.player.width)
 
-
+    if(this.player.y + this.player.height <= obstacle.y && this.player.y + this.player.height + this.player.vy >= obstacle.y  /*&& this.player.x <= obstacle.x + obstacle.width*/){
+        this.player.accy = 0
+        this.player.vy = 0
+        
+    
+        console.log('a')
+    }
+    if(   this.player.x + this.player.width > obstacle.x  + obstacle.width){
+        this.player.accy = 1
+    }    if(   this.player.x + this.player.width < obstacle.x  ){
+        this.player.accy = 1
+    }
  
+    }
+
+
 
 eraseFoes() {
+    
     
 
     this.foes.wheels.forEach((wheel, indexWheel)=>{
@@ -158,8 +180,13 @@ drawScore() {
       this.ctx.canvas.height / 2
     );
     
+    let retryButton = document.querySelector("#retry-btn")
+    retryButton.classList.toggle("hidden")
+    
     
   }
-
+ retry(){
+    
+ }
 
 }

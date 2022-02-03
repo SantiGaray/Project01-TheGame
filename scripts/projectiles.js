@@ -32,7 +32,7 @@ class Projectiles{
             vy: 0,
         }
         
-        newBullet.img.src = "/images/waterbullet.png"
+        newBullet.img.src = "images/waterbullet.png"
 
         return this.bullets.push(newBullet)
     }

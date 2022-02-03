@@ -68,7 +68,7 @@ class Foes {
           vy: 0
         }
     
-        newWheel.img.src = "/images/firewheel.png"
+        newWheel.img.src = "images/firewheel.png"
     
         return newWheel
 
