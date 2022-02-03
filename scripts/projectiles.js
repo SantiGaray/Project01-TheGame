@@ -25,9 +25,9 @@ class Projectiles{
             img: new Image(),
 
             width: 30,
-            height: 30,
-            x: player.x,
-            y: player.y + 3,
+            height: 20,
+            x: player.x + player.width-5,
+            y: player.y + player.height/2,
             vx: 7,
             vy: 0,
         }

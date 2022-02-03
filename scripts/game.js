@@ -101,7 +101,8 @@ checkForCollisions(){
         }
         
         return collision
- }
+}
+
  checkPlatform(obstacle){
      console.log("obstacleX",obstacle.x+ obstacle.width)
      console.log("playerX",this.player.vy + this.player.width)
@@ -125,7 +126,7 @@ checkForCollisions(){
 
 eraseFoes() {
     
-    
+
 
     this.foes.wheels.forEach((wheel, indexWheel)=>{
 

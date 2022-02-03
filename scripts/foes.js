@@ -5,19 +5,23 @@ class Foes {
     constructor(){
         this.ctx = ctx;
         this.wheels = [];
-        this.width = 112,5;
-        this.height = 120;
+        this.width = 50;
+        this.height = 58;
 
-        this.y = 0
-        this.vy = 0
+        this.y = 0;
+        this.vy = 0;
+        this.vx = -5;
 
-        this.spriteColumns = 16;
-        this.spriteRows = 0;
+        this.spriteColumns = 12;
+        this.spriteRows = 1;
 
         this.spriteCol = 0;
         this.spriteRow = 0;
         this.spriteX = 0;
         this.spriteY = 0;
+        this.img = new Image();
+        this.img.src = "images/firewheel.png"
+
     }
 
     init(){
@@ -33,8 +37,9 @@ class Foes {
 
 
     move(frameNumber){
-        if (frameNumber < 20) return;
-        if (frameNumber % 150 === 0){
+        console.log(this.wheels);
+        if (frameNumber < 20) return; // to delay the creation
+        if (frameNumber % 110 === 0){ 
             const wheelsPos = Math.floor((Math.random() * (this.ctx.canvas.height - 100)) +100)
             this.wheels.push(this.getWheel(wheelsPos))
         }
@@ -43,8 +48,9 @@ class Foes {
     }
 
     setSpriteFrame(frameNumber){
+        
 
-        if(frameNumber % 40 === 0){
+        if(frameNumber % 10 === 0){
             this.spriteCol += 1;
 
             if(this.spriteCol >= this.spriteColumns) {
@@ -57,38 +63,47 @@ class Foes {
     }
 
     getWheel(){
-        const newWheel = {
-          img: new Image(),
+        let newWheel = {
+          //img: new Image(),
     
-          width: 112.5,
-          height: 120,
-          x: this.ctx.canvas.width + (Math.floor(Math.random()* 200)-50),
-          y: 200,
-          vx: -5,
-          vy: 0
+          width: this.width,
+          height: this.height,
+          x: this.ctx.canvas.width + (Math.floor(Math.random())* 200),
+          y: 100 + (Math.floor(Math.random() * 200)),
+          vx: this.vx,
+          vy: this.vy
         }
     
-        newWheel.img.src = "images/firewheel.png"
+        //newWheel.img.src = "images/firewheel.png"
     
         return newWheel
 
     }
     
     draw(frameNumber) {
-        this.wheels.forEach((wheel) => {
+        this.setSpriteFrame(frameNumber)
+
+
+        //this.wheels.forEach((wheel) => {
+
+        if(this.wheels.length != 0){
+            for(let i = 0; i < this.wheels.length; i++) {
+                
                 this.ctx.drawImage(
-                    wheel.img,
-                    this.spriteX,
-                this.spriteY,
-                this.width,
-                this.height,
-                    wheel.x,
-                    wheel.y,
-                    wheel.width,
-                    wheel.height,
+                    this.img,
+                    112.5* this.spriteCol,
+                    0,
+                    112.5,
+                    119,
+                    this.wheels[i].x,
+                    this.wheels[i].y,
+                    this.width,
+                    this.height,
                  )
+                }
+            }
             
-                })
+               // })
         
     }
 

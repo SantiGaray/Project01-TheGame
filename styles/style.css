@@ -66,7 +66,7 @@ canvas {
     left: 400px
 }
 
-#start-btn , #retry-btn{
+#start-btn , #retry-btn {
     position: absolute;
     top: 50%;
     left: calc(50%);

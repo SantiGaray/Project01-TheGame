@@ -28,8 +28,8 @@ class Obstacles{
     const newScrap = {
       img: new Image(),
 
-      width: 150,
-      height: 50,
+      width: 200,
+      height: 70,
       x: this.ctx.canvas.width + (Math.floor(Math.random()* 200)-50),
       y: this.ctx.canvas.height - 150,
       vx: -5,
