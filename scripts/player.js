@@ -61,6 +61,7 @@ class Player{
 
     jump(){
         this.vy = -20
+        
     }
 
 

@@ -5,7 +5,13 @@ class Obstacles{
     constructor(ctx,player){
         this.ctx = ctx;
         this.scrapObstacles = [];
-        this.player = player
+        this.player = player;
+        this.width = 200;
+        this.height = 70;
+
+        this.y = 0;
+        this.vy = 0;
+        this.vx = -5;
     }
 
     init(){
@@ -28,11 +34,11 @@ class Obstacles{
     const newScrap = {
       img: new Image(),
 
-      width: 200,
-      height: 70,
+      width: this.width,
+      height: this.height,
       x: this.ctx.canvas.width + (Math.floor(Math.random()* 200)-50),
       y: this.ctx.canvas.height - 150,
-      vx: -5,
+      vx: this.vx,
       vy: 0
     }
 
