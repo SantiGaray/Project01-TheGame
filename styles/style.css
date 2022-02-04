@@ -15,7 +15,7 @@
 
 body{
     margin: 0px;
-    background-image: url("images/background0.jpg");
+    background-image: url("../images/background0.jpg");
     
 }
 
@@ -114,7 +114,7 @@ h1 {
 }
 
 .retro {
- background-image: url(../images/backgroundgif.gif);
+ background-image: url("../images/backgroundgif.gif");
  background-size: cover;
 }
 
