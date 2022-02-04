@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'DystopiaAlt';
-    src: url('/fonts/DystopiaAlt.ttf')  format('truetype');
+    src: url('fonts/DystopiaAlt.ttf')  format('truetype');
   }
 
   @font-face {
     font-family: 'Dystopia';
-    src: url('/fonts/Dystopia.ttf')  format('truetype');
+    src: url('fonts/Dystopia.ttf')  format('truetype');
   }
 
   @font-face {
     font-family: 'Atarian';
-    src: url('/fonts/Atarian.ttf')  format('truetype');
+    src: url('fonts/Atarian.ttf')  format('truetype');
   }
 
 body{
     margin: 0px;
-    background-image: url('../images/background0.jpg');
+    background-image: url('..images/background0.jpg');
     
 }
 
