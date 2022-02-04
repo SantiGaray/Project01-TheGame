@@ -171,6 +171,7 @@ drawScore() {
 
  gameOver() {
     this.stop();
+    this.ctx.save()
     this.ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
     this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
     this.ctx.fillStyle = "white";
@@ -186,10 +187,8 @@ drawScore() {
     let retryButton = document.querySelector("#retry-btn")
     retryButton.classList.toggle("hidden")
     
-    
+    this.ctx.restore()
   }
- retry(){
-    
- }
+ 
 
 }
