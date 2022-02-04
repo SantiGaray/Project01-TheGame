@@ -15,6 +15,7 @@ class Game{
         
         
         document.addEventListener("keydown", (event) => {
+            event.preventDefault()
             if (event.repeat) return;
             if(event.code === "Space"){
                 this.player.jump();}
