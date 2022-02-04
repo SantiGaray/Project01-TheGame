@@ -41,7 +41,8 @@ init(){
     this.background.init();
     this.obstacles.init();
     this.foes.init();
-    this.projectiles.init();  
+    this.projectiles.init();
+    this.score = 0  
 }
 
 play(){
@@ -62,8 +63,7 @@ play(){
 stop() {
     cancelAnimationFrame(this.frameNumber);
     this.frameNumber = null;
-    gameSoundIntro.pause();
-    gameSoundGameOver.play()
+    
 
 }
 
@@ -180,7 +180,8 @@ drawScore() {
       this.ctx.canvas.width / 2,
       this.ctx.canvas.height / 2
     );
-    
+    gameSoundIntro.pause();
+    //gameSoundGameOver.play()
     let retryButton = document.querySelector("#retry-btn")
     retryButton.classList.toggle("hidden")
     

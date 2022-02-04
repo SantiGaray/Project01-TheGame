@@ -9,9 +9,7 @@ class Obstacles{
         this.width = 200;
         this.height = 70;
 
-        this.y = 0;
-        this.vy = 0;
-        this.vx = -5;
+        
     }
 
     init(){
@@ -38,7 +36,7 @@ class Obstacles{
       height: this.height,
       x: this.ctx.canvas.width + (Math.floor(Math.random()* 200)-50),
       y: this.ctx.canvas.height - 150,
-      vx: this.vx,
+      vx: -5,
       vy: 0
     }
 

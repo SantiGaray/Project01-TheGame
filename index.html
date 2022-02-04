@@ -7,23 +7,39 @@
     <link rel="stylesheet" href="./styles/style.css">
     <title>Obsolete</title>
 </head>
+
 <body>
-    
-    
-    <div id="game-board">
-        <p>OBSOLETE</p>
-        <canvas id="canvas" class="frontimg-canvas" width="1000" height="580"></canvas>
-        
-            <div id="menu">
-                <button id="start-btn" type="button">Start Game!</button>
-                
-
-                <!-- <button id="options-btn" type="button">Options</button> -->
+<h1>OBSOLETE</h1>
+    <div class="mainContainer">
+        <section id="intro-page">
+            
+            
+            <div class="about retro">
+                <h2>Story</h2>
+                <p>After a massive nuclear event, humankind is at a break point.
+                <br>
+                Help <em>SQUALER</em> reach the safe zone through the wasteland. </p>
             </div>
-            <button id="retry-btn" class="hidden" type="button">Retry!</button>
-        <br>
-    </div>
 
+            <div class="about retro">
+                <h2>Controls</h2>
+                    <ul>
+                        <li>"SpaceBar" to Jump!</li>
+                        <li>"A" to shoot Water Bullets!</li>
+                        <li>Avoid FireWheels!</li>
+                        <li>Jump in Platforms!</li>                    
+                    </ul>
+                <button id="start-btn" class= "btn" type="button">Start Game!</button>
+            </div>
+        </section>
+            
+            
+        <section id="game-board" class="hidden">
+            <canvas id="canvas" width="1024" height="580"></canvas>
+            
+        </section>
+        <button id="retry-btn" class="btn hidden" type="button">Retry!</button>
+    </div>
     
 
 
