@@ -25,10 +25,7 @@ const h1 = document.querySelector("h1")
 // const optionsButton = document.getElementById("menu")
 const introPage = document.getElementById("intro-page")
 const gameBoard = document.getElementById("game-board")
-console.log(startButton)
-console.log(introPage)
-console.log(gameBoard)
-console.log(retryButton)
+
 
 
 
